@@ -22,7 +22,7 @@ function game(){
     
     getPlayerChoice();
     console.log("You chose: " + userChoice);
-    console.log(playGame(userChoice,getComputerChoice()));
+    console.log(decideWinner(userChoice,getComputerChoice()));
 }
 
 //make computer take a guess
@@ -31,8 +31,8 @@ function getComputerChoice(){
     return choices[number];
 }
 
-//This function checks for who wins and returns the correct text
-function playGame(playerSelection, computerSelection) {
+//This function checks for who wins, adds score, returns the correct text
+function decideWinner(playerSelection, computerSelection) {
     let str = "";
     if (playerSelection === computerSelection){
         str = "It's a draw ! You both picked: " + playerSelection;
