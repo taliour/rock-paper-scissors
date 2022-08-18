@@ -2,23 +2,40 @@
 let choices = ["rock","paper","scissors"];
 let userChoice;
 let validChoice = false;
-//Take user input and allow only inputs for rock, paper or scissors
-while (validChoice == false){
-    userChoice = prompt("Choose between, rock, paper or scissors!");
-    userChoice = userChoice.toLowerCase();
-    
-    if (userChoice =="rock" ||userChoice == "paper" ||userChoice == "scissors") {
-        validChoice = true;
-    }
 
+//Take user input and allow only inputs for rock, paper or scissors
+function getPlayerChoice(){
+    while (validChoice == false){
+        userChoice = prompt("Choose between, rock, paper or scissors!");
+        userChoice = userChoice.toLowerCase();
+        
+        if (userChoice =="rock" ||userChoice == "paper" ||userChoice == "scissors") {
+            validChoice = true;
+        }
+    }
 }
+
+//Function that plays the game with guess
+function game(){
+    
+    getPlayerChoice();
+    console.log("You chose: " + userChoice);
+    console.log(playGame(userChoice,getComputerChoice()));
+}
+
+//Loop through the game
+for (let i = 0; i < 5; i++){
+    game();
+    validChoice = false;
+}
+
 //make computer take a guess
-console.log("You chose: " + userChoice);
 function getComputerChoice(){
     let number = Math.floor(Math.random()*3);
     return choices[number];
 }
 
+//This function checks for who wins and returns the correct text
 function playGame(playerSelection, computerSelection) {
     let str = "";
     if (playerSelection === computerSelection){
@@ -50,4 +67,3 @@ function playGame(playerSelection, computerSelection) {
     }
     return str;
 }
-console.log(playGame(userChoice,getComputerChoice()));
