@@ -76,6 +76,7 @@ for (let i = 0; i < 5; i++){
     validChoice = false;
 }
 
+// Check who won the best of 5 and announce winner
 let str = "";
 if (computerScore > playerScore){
     str = "You lose :( : ";
