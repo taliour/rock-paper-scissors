@@ -71,10 +71,10 @@ function decideWinner(playerSelection, computerSelection) {
 }
 
 //Loop through the game
-for (let i = 0; i < 5; i++){
-    game();
-    validChoice = false;
-}
+//for (let i = 0; i < 5; i++){
+    //game();
+   // validChoice = false;
+//}
 
 // Check who won the best of 5 and announce winner
 let str = "";

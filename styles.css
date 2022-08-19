@@ -1,0 +1,86 @@
+@font-face{
+    font-family: "pixel-font";
+    src: url("./fonts/silkscreen-regular-webfont.woff") format("woff"),
+    url("./fonts/silkscreen-regular-webfont.woff2") format("woff2");    
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.header {
+    background-color: #856e21;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 25px;
+    padding-left: 75px;
+    padding-right: 75px;
+    align-items: center;
+    font-family: "pixel-font";
+}
+.logo {
+    font-size: 32px;
+    font-weight: 550;
+    color: white;
+}
+.github {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-weight: 400;
+}
+.footer {
+    background-color: #856e21;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 16px;
+}
+
+.container {
+    background-color: #F8CB2E;
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    gap:40px;
+    justify-content: center;
+    align-items: center;
+    font-family: "pixel-font";
+}
+
+.score{
+    font-size: 106px;
+    font-weight: bold;
+    margin-bottom: 75px;
+    
+}
+.announcement {
+    font-size: 32px;
+    font-weight: 500;
+    
+}
+.images {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap : 80px;
+    
+    
+}
+.explain {
+    font-size: 28px;
+    font-weight: 400;
+    
+}
+img {
+    width: 128px;
+    height: auto;
+    border: solid black 4px;
+    padding: 20px;
+    border-radius: 14px;
+}
