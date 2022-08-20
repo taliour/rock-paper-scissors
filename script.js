@@ -36,7 +36,7 @@ function game(){
     //give encouraging comments
     gameWinner.textContent = encourageUser();
 
-    //check if game is finished
+    //check if game is finished and update the boolean
     if (playerScore>=5 || computerScore >=5){
         gameFinished = true;
     }
