@@ -4,6 +4,7 @@ const paper = document.querySelector(".paper")
 const scissors = document.querySelector(".scissors")
 const score = document.querySelector(".score");
 const roundWinner = document.querySelector(".explain");
+const gameWinner = document.querySelector(".announcement");
 
 //Global variables and arrays
 let choices = ["rock","paper","scissors"];
@@ -31,7 +32,7 @@ function game(){
 
 
     // Check who won the best of 5 and announce winner
-    if (playerScore >= 3 || computerScore >= 3){
+    if (playerScore >= 5 || computerScore >= 5){
         let str = "";
         if (computerScore > playerScore){
             str = "You lose :( : ";
@@ -42,7 +43,7 @@ function game(){
         else {
             str = "it's a draw :/ : "
         }
-        console.log(str + playerScore + "-" + computerScore);
+        gameWinner.textContent = str + playerScore + "-" + computerScore;
         validChoice = false;
     }
 }
