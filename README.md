@@ -1,2 +1,2 @@
 # rock-paper-scissors
-This is my first Javscript project following the online learning course The Odin Project. It used to be played through the console but now I have built a UI to make it more fun. This a showcase project for my progress in the online course (The Odin Proejct). To replay simply refresh the page.
+This is my first Javscript project following the online learning course The Odin Project. It used to be played through the console but now I have built a UI to make it more fun. This a showcase project for my progress in the online course (The Odin Proejct). To replay click the icons one time.

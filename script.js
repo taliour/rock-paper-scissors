@@ -19,9 +19,9 @@ const encouragement = ["Come one you can do this!!","I believe in you, win this!
 
 //Take user input and play the game if not finished
 function getPlayerChoice(){
-    paper.addEventListener("click",()=> {userChoice="paper"; if(gameFinished == false) {game()};});
-    rock.addEventListener("click", () => {userChoice="rock"; if(gameFinished == false) {game()};});
-    scissors.addEventListener("click", () => {userChoice="scissors"; if(gameFinished == false) {game()};});
+    paper.addEventListener("click",()=> {userChoice="paper";playGame();});
+    rock.addEventListener("click", () => {userChoice="rock";playGame();});
+    scissors.addEventListener("click", () => {userChoice="scissors"; playGame();});
 
 }
 //Function that plays the game
@@ -46,6 +46,22 @@ function game(){
         announceWinner();
     }
 }
+//Plays the game if game unfinished and restarts it if game is finished
+function playGame(){
+    if(gameFinished==false)
+    {
+        game();
+    }
+    else {
+        playerScore = 0;
+        computerScore = 0;
+        gameFinished = false;
+        score.textContent = "0-0"
+        gameWinner.textContent = "Play a game of rock-paper-scissors"
+        roundWinner.textContent = "Prepare for a game that will be Legen... wait for it ... DARY"
+    }
+}
+
 //Choose a random encouragement text
 function encourageUser(){
 
@@ -57,15 +73,15 @@ function encourageUser(){
 function announceWinner() {
     let str = "";
     if (computerScore > playerScore){
-        str = "You lose :( : ";
+        str = "You lose :( ";
     }
     else if (computerScore < playerScore){
-        str = "You win :) : ";
+        str = "You win :) ";
     }
     else {
-        str = "it's a draw :/ : "
+        str = "it's a draw :/ "
     }
-    gameWinner.textContent = str + playerScore + "-" + computerScore;
+    gameWinner.textContent = str + "To replay click the icons again!";
 }
 
 //make computer take a guess, assign computerChoice value and return that value
