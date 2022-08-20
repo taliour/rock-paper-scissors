@@ -84,3 +84,6 @@ img {
     padding: 20px;
     border-radius: 14px;
 }
+.imgHovered {
+    border: solid orange 6px;
+}
