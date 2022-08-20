@@ -1,2 +1,2 @@
 # rock-paper-scissors
-This is my first Javscript project following the online learning course The Odin Project. It's a simple rock paper scissors game, played through the console for now. Later on I will add a GUI to make it more interactive for the user. Thanks for playing.
+This is my first Javscript project following the online learning course The Odin Project. It used to be played through the console but now I have built a UI to make it more fun. This a showcase project for my progress in the online course (The Odin Proejct). To replay simply refresh the page.
