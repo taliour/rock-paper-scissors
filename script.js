@@ -10,15 +10,18 @@ const gameWinner = document.querySelector(".announcement");
 let choices = ["rock","paper","scissors"];
 let userChoice;
 let computerChoice;
-let validChoice = true;
+let gameFinished = false;
 let playerScore = 0;
 let computerScore = 0;
+const encouragement = ["Come one you can do this!!","I believe in you, win this!",
+"Don't dissapoint me!", "I have faith in you! Win it!","Don't make me regret letting you play",
+"This is important, win it", "No dinner for you if you lose this", "Win this and you will be rewarded"]
 
 //Take user input and play the game if not finished
 function getPlayerChoice(){
-    paper.addEventListener("click",()=> {userChoice="paper"; if(validChoice == true) {game()};});
-    rock.addEventListener("click", () => {userChoice="rock"; if(validChoice == true) {game()};});
-    scissors.addEventListener("click", () => {userChoice="scissors"; if(validChoice == true) {game()};});
+    paper.addEventListener("click",()=> {userChoice="paper"; if(gameFinished == false) {game()};});
+    rock.addEventListener("click", () => {userChoice="rock"; if(gameFinished == false) {game()};});
+    scissors.addEventListener("click", () => {userChoice="scissors"; if(gameFinished == false) {game()};});
 
 }
 //Function that plays the game
@@ -30,22 +33,39 @@ function game(){
     //update the score
     score.textContent = playerScore + "-" + computerScore;
 
+    //give encouraging comments
+    gameWinner.textContent = encourageUser();
+
+    //check if game is finished
+    if (playerScore>=5 || computerScore >=5){
+        gameFinished = true;
+    }
 
     // Check who won the best of 5 and announce winner
-    if (playerScore >= 5 || computerScore >= 5){
-        let str = "";
-        if (computerScore > playerScore){
-            str = "You lose :( : ";
-        }
-        else if (computerScore < playerScore){
-            str = "You win :) : ";
-        }
-        else {
-            str = "it's a draw :/ : "
-        }
-        gameWinner.textContent = str + playerScore + "-" + computerScore;
-        validChoice = false;
+    if (gameFinished){
+        announceWinner();
     }
+}
+//Choose a random encouragement text
+function encourageUser(){
+
+    let number = Math.floor(Math.random()*encouragement.length);
+    return encouragement[number];
+}
+
+//Check who won the best of 5 and announce winner
+function announceWinner() {
+    let str = "";
+    if (computerScore > playerScore){
+        str = "You lose :( : ";
+    }
+    else if (computerScore < playerScore){
+        str = "You win :) : ";
+    }
+    else {
+        str = "it's a draw :/ : "
+    }
+    gameWinner.textContent = str + playerScore + "-" + computerScore;
 }
 
 //make computer take a guess, assign computerChoice value and return that value
@@ -105,7 +125,7 @@ paper.addEventListener("mouseout",()=> {paper.style.cssText="border: solid black
 scissors.addEventListener("mouseover",()=> {scissors.style.cssText = "border: solid #856e21 6px"});
 scissors.addEventListener("mouseout",()=> {scissors.style.cssText="border: solid black 4px"});
 
-
+//Play the game
 getPlayerChoice();
 
 
